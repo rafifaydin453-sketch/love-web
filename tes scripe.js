@@ -18,12 +18,10 @@ btnNo.addEventListener("touchstart", function(e){
     e.preventDefault();
     moveButton();
 });
-function showYesPage(){
-
+function showYesPage() {
     document.getElementById("page-main").classList.remove("active");
     document.getElementById("page-yes").classList.add("active");
 
-    createConfetti();
 }
 function goBack(){
 
