@@ -25,7 +25,6 @@ function showYesPage(){
 
     createConfetti();
 }
-
 function goBack(){
 
     document.getElementById("page-yes").classList.remove("active");
