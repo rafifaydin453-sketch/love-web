@@ -1,0 +1,192 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Nunito',sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5,#fff7fa);
+    overflow:hidden;
+}
+
+.page{
+    display:none;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.page.active{
+    display:flex;
+}
+
+.card{
+    width:420px;
+    background:rgba(255,255,255,.95);
+    border-radius:28px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(255,105,180,.25);
+    animation:pop .7s ease;
+    backdrop-filter:blur(10px);
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.emoji-top{
+    font-size:42px;
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.question{
+    margin:20px 0;
+    font-size:42px;
+    font-family:'Playfair Display',serif;
+    color:#ff4f87;
+}
+
+.question em{
+    color:#ff6ca8;
+}
+
+.media-slot{
+    width:100%;
+    height:250px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#ffe5ef;
+    margin:20px 0;
+}
+
+.media-slot video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:15px;
+}
+
+button{
+    border:none;
+    padding:14px 32px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+#btn-yes{
+    background:#ff5c98;
+    color:white;
+}
+
+#btn-yes:hover{
+    transform:scale(1.1);
+    background:#ff2d7d;
+    box-shadow:0 10px 25px rgba(255,0,100,.35);
+}
+
+#btn-no{
+    background:white;
+    color:#ff5c98;
+    border:2px solid #ff5c98;
+    position:relative;
+}
+
+#btn-no:hover{
+    background:#ffe3ef;
+}
+
+.yes-title{
+    font-size:42px;
+    color:#ff4f87;
+}
+
+.yes-subtitle{
+    margin:15px 0 20px;
+    color:#666;
+}
+
+.btn-back{
+    margin-top:25px;
+    background:#ff5c98;
+    color:white;
+}
+
+.hearts-bg{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts-bg::before,
+.hearts-bg::after{
+    content:"💖 💕 💗 💘 💝 💞";
+    position:absolute;
+    width:100%;
+    font-size:40px;
+    opacity:.15;
+    animation:fall 15s linear infinite;
+}
+
+.hearts-bg::after{
+    animation-delay:-7s;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(120vh);
+    }
+}
+@media (max-width:600px){
+
+    .card{
+        width:90%;
+        padding:25px;
+    }
+
+    .question{
+        font-size:34px;
+    }
+
+    .media-slot{
+        height:220px;
+    }
+
+    button{
+        font-size:16px;
+        padding:12px 24px;
+    }
+
+}
