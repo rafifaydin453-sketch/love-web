@@ -24,6 +24,9 @@ function showYesPage(){
     document.getElementById("page-yes").classList.add("active");
 
     createConfetti();
+    const video = document.getElementById("yes-video");
+    video.currentTime = 0;
+    video.play();
 }
 
 function goBack(){
